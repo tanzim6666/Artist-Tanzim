@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Tanzim | Premium Art & Craft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- অ্যানিমেটেড ব্যাকগ্রাউন্ড -->
+    <div class="animated-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- হেডার -->
+    <header class="header reveal">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <img src="logo.png" alt="Artist Tanzim Logo" class="site-logo">
+                <div class="logo-text">
+                    <h1>Artist Tanzim</h1>
+                    <p>Art & Craft Studio</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#paintings" class="nav-link">পেইন্টিং <span>Paintings</span></a>
+                <a href="#crafts" class="nav-link">ক্রাফট <span>Crafts</span></a>
+                <a href="#contact" class="nav-link">যোগাযোগ <span>Contact</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- হিরো সেকশন -->
+    <section class="hero">
+        <div class="container hero-content reveal">
+            <div class="hero-badge">✨ Premium Collection | প্রিমিয়াম কালেকশন</div>
+            <h2>অর্ডার করুন আপনার প্রিয় <span class="gradient-text">শিল্পকর্ম</span><br>Order Your Favorite <span class="gradient-text">Artwork</span></h2>
+            <p>সেরা মানের হাতে তৈরি পেইন্টিং এবং ইউনিক ক্রাফট আইটেম।<br>Best quality handmade paintings and unique craft items.</p>
+            <a href="#paintings" class="btn-main">এক্সপ্লোর করুন <span>Explore Now</span></a>
+        </div>
+    </section>
+
+    <!-- পেইন্টিং সেকশন -->
+    <section class="section" id="paintings">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">🎨 আমাদের পেইন্টিং <span>Our Paintings</span></h2>
+                <p class="section-subtitle">প্রতিটি তুলিতে ফুটে উঠেছে শিল্পীর আবেগ | Every stroke tells a story</p>
+            </div>
+            <div class="grid" id="paintingGrid"></div>
+        </div>
+    </section>
+
+    <!-- ক্রাফট সেকশন -->
+    <section class="section bg-alt" id="crafts">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title"> আমাদের ক্রাফট <span>Our Crafts</span></h2>
+                <p class="section-subtitle">হাতের ছোঁয়ায় তৈরি অসাধারণ সব ক্রাফট | Handmade with love and care</p>
+            </div>
+            <div class="grid" id="craftGrid"></div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer class="footer" id="contact">
+        <div class="container reveal">
+            <h3>Artist Tanzim</h3>
+            <p>যোগাযোগ করুন | Contact Us</p>
+            <a href="https://wa.me/8801719365983" class="contact-btn">📱 WhatsApp: +880 1719-365983</a>
+            <p class="copyright">© 2026 Artist Tanzim. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- প্রোডাক্ট ডিটেইল মডাল (বড় ছবি দেখাবে) -->
+    <div class="modal-bg" id="productDetailModal">
+        <div class="product-detail-box">
+            <span class="close-btn" onclick="closeProductDetail()">✕</span>
+            <div class="detail-image-wrapper">
+                <img src="" alt="" id="detailImage" class="detail-image">
+            </div>
+            <div class="detail-content">
+                <div class="detail-badge" id="detailBadge">পেইন্টিং | Painting</div>
+                <h2 class="detail-title" id="detailTitle">প্রোডাক্টের নাম</h2>
+                <div class="detail-price" id="detailPrice">৳299</div>
+                <div class="detail-description">
+                    <p class="bn-text" id="detailDescBn">এটি একটি অসাধারণ হাতে তৈরি শিল্পকর্ম। প্রতিটি ডিটেইল যত্ন সহকারে তৈরি করা হয়েছে।</p>
+                    <p class="en-text" id="detailDescEn">This is an exceptional handmade artwork. Every detail is crafted with care and precision.</p>
+                </div>
+                <div class="detail-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✅</span>
+                        <span>০০% হ্যান্ডমেড | 100% Handmade</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🚚</span>
+                        <span>সারা বাংলাদেশে ডেলিভারি | Nationwide Delivery</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💎</span>
+                        <span>প্রিমিয়াম কোয়ালিটি | Premium Quality</span>
+                    </div>
+                </div>
+                <button class="btn-order-detail" id="detailOrderBtn"> অর্ডার করুন | Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- অর্ডার মডাল (পপ-আপ) -->
+    <div class="modal-bg" id="orderModal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal()">✕</span>
+            <h2>অর্ডার কনফার্ম করুন <span>Confirm Order</span></h2>
+            
+            <div class="order-summary">
+                <div class="summary-row">
+                    <span> প্রোডাক্ট:</span>
+                    <strong id="modalProductName">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span>💰 প্রোডাক্টের দাম:</span>
+                    <strong id="modalBasePrice">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span>🚚 ডেলিভারি চার্জ:</span>
+                    <strong id="modalDelivery">৳70</strong>
+                </div>
+                <div class="summary-row total-row">
+                    <span>💵 সর্বমোট (Total):</span>
+                    <strong id="modalTotalPrice">-</strong>
+                </div>
+            </div>
+            
+            <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+                <div class="input-group">
+                    <label>আপনার নাম | Your Name</label>
+                    <input type="text" id="cName" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="input-group">
+                    <label>মোবাইল নম্বর | Phone Number</label>
+                    <input type="tel" id="cPhone" required placeholder="01XXXXXXXXX" pattern="[0-9]{11}">
+                </div>
+                
+                <div class="input-group">
+                    <label>সম্পূর্ণ ঠিকানা | Full Address</label>
+                    <textarea id="cAddress" required placeholder="House, Road, Area, District"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label>পরিমাণ | Quantity</label>
+                    <input type="number" id="cQty" value="1" min="1" required onchange="updateTotal()">
+                </div>
+                
+                <button type="submit" class="btn-whatsapp">📱 WhatsApp-এ অর্ডার পাঠান | Send Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- কনফেটি ইফেক্ট কন্টেইনার -->
+    <div id="confetti-container"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
